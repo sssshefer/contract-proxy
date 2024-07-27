@@ -4,8 +4,8 @@ describe("ContractProxy", function () {
   async function deploy() {
     const [owner, user1, user2, user3] = await ethers.getSigners();
     const ContractProxyFactory = await ethers.getContractFactory("ContractProxy", owner);
-    const contractProxy = await ContractProxyFactory.deploy();
-    await contractProxy.waitForDeployment()
+    const contractProxy = await ContractProxyFactory.deploy(owner);
+    await contractProxy.waitForDeployment();
     return { owner, user1, user2, user3, contractProxy }
   }
 
