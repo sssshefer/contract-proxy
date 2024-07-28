@@ -9,10 +9,10 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
-contract ContractProxy is
+contract ContractProxyV2 is
     Initializable,
     ERC721Upgradeable,
-    ERC721URIStorageUpgradeable,
+    ERC721URIStorageUpgradeable, 
     ERC721BurnableUpgradeable,
     OwnableUpgradeable,
     UUPSUpgradeable
@@ -37,6 +37,10 @@ contract ContractProxy is
         _setTokenURI(tokenId, uri);
     }
 
+    function newV2Feature() external pure returns (bool) {
+        return true;
+    }
+
     // The following functions are overrides required by Solidity.
 
     function tokenURI(
@@ -59,9 +63,9 @@ contract ContractProxy is
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
-    }
+    } 
 
     function _authorizeUpgrade(
         address newImplementation
-    ) internal override onlyOwner {}
+    ) internal onlyOwner override {}
 }
