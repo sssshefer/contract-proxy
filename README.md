@@ -87,3 +87,4 @@ This will run the test suite and verify the functionality of the proxy contracts
 
 <a href="https://ru.freepik.com/free-vector/garantia-kacestva-biznes-sdelka-garantiinyi-sertifikat_12085320.htm#fromView=search&page=1&position=0&uuid=82f43d94-c645-4416-982c-05886355c3fb">Header pic is from vectorjuice on Freepik</a>
 
+**Happy hacking**
